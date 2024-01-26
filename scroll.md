@@ -23,13 +23,14 @@
 
 
 
-``css
+```css
 .scroller{
     background-color: blueviolet;
     position: fixed;
     top: 0;
     left: 0;
     height: 4px;
+
     /* note=> عرض الشريط والذي ناتي به بالنسبة */
     width: 0px ; 
     z-index: 99999;
