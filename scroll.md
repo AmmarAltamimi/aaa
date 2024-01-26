@@ -21,6 +21,8 @@
 </html>
 ```
 
+
+
 ``css
 .scroller{
     background-color: blueviolet;
@@ -28,18 +30,20 @@
     top: 0;
     left: 0;
     height: 4px;
-    /* عرض الشريط والذي ناتي به بالنسبة */
+    /* note=> عرض الشريط والذي ناتي به بالنسبة */
     width: 0px ; 
     z-index: 99999;
 
 }
 
 body{
-    /* نفرض ارتفاع لانه لايوجد تصميم  */
+    /* note=>نفرض ارتفاع لانه لايوجد تصميم  */
     height: 9000px; 
 }
 
 ```
+
+
 
 ```javascript
  let scroll = document.querySelector(".scroller");
