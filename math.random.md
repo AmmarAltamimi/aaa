@@ -1,5 +1,5 @@
 # math randow application 
-**2) random number**
+**1) random number**
 ```javascript
 function rang(min,max){
 	return (Math.floor(Math.random() * (max-min+1)) + min);
