@@ -60,4 +60,62 @@ let arr = ["Ahmed", "Sayed", "Ali"];
 console.log(arr[Math.trunc(Math.random() * arr.length)]);
 ```
 ------------------------------------------------------------------------------------------------
+**4) random password**
+```javascript
+//تدخل طول كلمة السر + والاجابة بنعم او لا هل الحالة التي تريد ان تشملها كلمة السر مثال هل تريد فيها حروف كبيرة لانه بنعمل شرط فيما بعد انه اذا كانت الاجابة لا مابضيفه في المصفوفة او النص الذي اريد ان انشي به كلمة السر ..
+function generatePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols){ 
+
+	// تم التفصيل هنا حتى نختار ايش الذي تريده في كلمة السر مثلا هل حروف كبيرة تشملها كلمة السر او لا .. في بعض الحالات الاخرى قد نفصل حتى مثلا نختار عشوائي حرف من كل كلمة سر حتى تشمل كلمة السر كل الحالات (لايوجد مثال هنا) ..
+    const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+    const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const numberChars = "0123456789";
+    const symbolChars = "!@#$%^&*()_+-=";
+
+    let allowedChars = "";
+    let password = "";
+
+//اضافة الحالات التي تريدها في كلمة السر الى المتغير الذي يشمل كل الحالات ..
+    allowedChars += includeLowercase ? lowercaseChars : "";
+    allowedChars += includeUppercase ? uppercaseChars : "";
+    allowedChars += includeNumbers ? numberChars : "";
+    allowedChars += includeSymbols ? symbolChars : "";
+
+// اذا الطول الذي دخله اقل من صفر 
+    if(length <= 0){
+        return `(password length must be at least 1)`;
+    }
+//اذا كل الاجبات كانت لا بالتالي كيف بانشا كلمة السر ؟! 
+    if(allowedChars.length === 0){
+        return `(At least 1 set of character needs to be selected)`;
+    }
+
+// عمل كلمة السر حسب الطول الذي عملته 
+    for(let i = 0; i < length; i++){
+        const randomIndex = Math.floor(Math.random() * allowedChars.length);
+        password += allowedChars[randomIndex];
+    }
+
+    return password;
+}
+
+
+// مثال على كلمة السر حبيث يعطي مدخلات من عنده للفانكشن ..
+const passwordLength = 10;
+const includeLowercase = true;
+const includeUppercase = true;
+const includeNumbers = true;
+const includeSymbols = true;
+
+const password = generatePassword(passwordLength, 
+                                 includeLowercase, 
+                                 includeUppercase, 
+                                 includeNumbers, 
+                                 includeSymbols);
+
+console.log(`Generated password: ${password}`);
+
+```
+
+
+
 
