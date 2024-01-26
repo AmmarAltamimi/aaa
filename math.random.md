@@ -1,6 +1,13 @@
 # math randow application 
+**2) random number **
+```javascript
+function rang(min,max){
+	return (Math.floor(Math.random() * (max-min+1)) + min);
+ }
+```
 
-**1) change color**
+------------------------------------------------------------------------------------------------
+**2) random color**
 ```javascript
 
 //------------------------------------------using array-----------------------------------------------//
