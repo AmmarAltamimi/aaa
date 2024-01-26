@@ -1,2 +1,2 @@
 # math randow application 
-1) * change color * 
+1) *change color* 
