@@ -1,7 +1,7 @@
 # scroll
 
 1) **عمل شريط في الاعلى وهذا الشريطة كلما نزلت للاسقل يزداد عرضه وعندما تصل الى النهاية يكون اكتمل الشريط على عرض الصفحة**
-2)  ```javascript
+ ```javascript
    
  let scroll = document.querySelector(".scroller");
 let scrollHeight = document.documentElement.scrollHeight;
