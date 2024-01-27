@@ -117,5 +117,92 @@ scroller.addEventListener("click",()=>{
 
 
 ```
+--------------------------------------------------------------------------------------------------------------------
+
+3) **عندما اعمل scroll للصفحة عند نصل الى قسم معين يبدا العداد**
+
+```html
+	<section class="one">Section One</section>
+	<section class="two">Section Two</section>
+	<section class="three">
+	  <div class="nums">
+		<div class="num" data-goal="100">0</div>
+		<div class="num" data-goal="500">0</div>
+		<div class="num" data-goal="300">0</div>
+	  </div>
+	</section>
+	<section class="four">Section Four</section>
+```
+
+
+
+```css
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", sans-serif;
+  margin: 0;
+}
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section:first-child {
+  background-color: #aaa;
+}
+section:nth-child(2) {
+  background-color: #bbb;
+}
+section:nth-child(3) {
+  background-color: #ccc;
+}
+section:last-of-type {
+  background-color: #eee;
+}
+.nums {
+  width: 400px;
+  display: flex;
+}
+.nums .num {
+  flex: 1;
+  text-align: center;
+  font-size: 40px;
+  padding: 20px;
+}
+
+```
+
+
+
+```javascript
+let counter = [...document.getElementsByClassName("num")];
+let section = document.getElementsByClassName("three")[0];
+
+window.addEventListener("scroll",()=>{
+
+	if(window.scrollY >=section.offsetTop){
+
+		counter.forEach(element => {
+			let goal = element.getAttribute("data-goal");
+			let increase = setInterval(()=>{
+					if(element.textContent === goal){
+						clearInterval(increase);
+					}else{
+						element.textContent++;
+					}
+			},2000/goal)
+		});
+	}
+	
+})
+
+
+
+```
+
+
 
 
