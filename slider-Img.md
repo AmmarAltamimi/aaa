@@ -143,22 +143,17 @@ let sliderLi = document.querySelectorAll("#pagination-ul li");
 
 //function at beginning
 
-if(window.localStorage.getItem("ele")){
-  let da = JSON.parse(window.localStorage.getItem("ele"))
-  sliderLi[da].classList.add("active");
-  sliderImg[da].classList.add("active");
-  sliderNo.innerHTML =`#slider ${da+1} / ${sliderImg.length} `;
-  if(da===0){
-    sliderPrev.classList.add("disabled");
+//get index from storage
+window.addEventListener("load",()=>{
+  if(window.localStorage.getItem("ele")){
+    let da = JSON.parse(window.localStorage.getItem("ele"))
+    sliderLi[da].click()
   }
-  else if(da==sliderImg.length-1){
-    sliderNext.classList.add("disabled");
-  }
-}
-
-else{
-  defaultFunction();
-}
+  
+  else{
+    defaultFunction();
+  }  
+})
 
 //click on li 
 sliderLi.forEach((li,index) => {
@@ -179,7 +174,7 @@ nextButton(index);
 // no of img we are 
 sliderNumber(index);
 
-//save
+//save index from storage
 window.localStorage.setItem("ele",JSON.stringify(index));
 
   })
@@ -280,5 +275,65 @@ function sliderPrevFunction(){
       liActive.nextElementSibling.click()
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const members = [
+// 	{ id: 1, name: 'John' },
+// 	{ id: 2, name: 'Jane' },
+// 	{ id: 1, name: 'Johnny' },
+// 	{ id: 4, name: 'Alice' },
+//   ];
+
+//   let ammar = members.map((m) => [m.id, m]);
+//   console.log(ammar);
+
+//   const unique = [...new Map(ammar).values()];
+// console.log(unique)
+
+
+
+// const ammar = [];
+// const newone =[];
+
+// for(let i = 0 ;  i < members.length;i++){
+
+// 	if(!ammar.includes(members[i].id)){
+// 		ammar.push(members[i].id)
+// 		newone.push(members[i]);
+
+// 	}
+// }
+	
+// console.log(newone)
+
+
+
+
+
+// const members = [1,2,3,1,2];
+// const ammar = [];
+
+
+// for(let i = 0 ;  i < members.length;i++){
+
+// 	if(i ===members.findIndex(e=>(members[i]===e))){
+// 		ammar.push(members[i]);
+
+// 	}
+// }
+	
+// console.log(ammar)
 
 ```
