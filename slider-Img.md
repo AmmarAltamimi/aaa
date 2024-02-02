@@ -337,3 +337,183 @@ function sliderPrevFunction(){
 // console.log(ammar)
 
 ```
+*بطريقة متغير والاتربيوت اي  غير طريقة Index السابقة  في جافا اسكربيت*
+```javascript
+let sliderImg = document.querySelectorAll(".slider-container img");
+let sliderNo = document.querySelector(".slider-container .slide-number");
+let sliderPrev = document.querySelector(".slider-controls .prev");
+let sliderNext = document.querySelector(".slider-controls .next");
+let sliderIndicators = document.querySelector(".slider-controls .indicators");
+
+let currentSlider = 0;
+
+//add ul amd li to page
+let sliderUl = document.createElement("ul");
+sliderUl.setAttribute('id', 'pagination-ul');
+for(let i = 0 ; i<sliderImg.length ;  i++ ){
+
+  let slideCreate= document.createElement("li");
+  slideCreate.setAttribute("data-value",i)
+  slideCreate.appendChild(document.createTextNode(i+1));
+  sliderUl.appendChild(slideCreate);
+}
+sliderIndicators.append(sliderUl);
+
+//call li and action click
+let sliderLi = document.querySelectorAll("#pagination-ul li");
+
+
+//get index from storage
+window.addEventListener("load",()=>{
+  if(window.localStorage.getItem("ele")){
+     currentSlider = JSON.parse(window.localStorage.getItem("ele"));
+removeAddActiveList();
+removeAddActiveImg();
+ prevButton();
+ nextButton();
+ sliderNumber();
+  }
+  
+  else{
+    //function at beginning
+    defaultFunction();
+  }  
+})
+
+
+//click on li 
+sliderLi.forEach((li) => {
+  li.addEventListener("click",()=>{
+
+    currentSlider = +li.getAttribute("data-value");
+
+ //remove active class from all li and add it to select li 
+ removeAddActiveList();
+
+ //remove active class from all img and add it to select img 
+ removeAddActiveImg();
+
+//prev button 
+prevButton();
+
+//next button 
+nextButton();
+
+// no of img we are 
+sliderNumber();
+
+//save index from storage
+window.localStorage.setItem("ele",JSON.stringify(currentSlider));
+
+  })
+});
+
+//function when ypu click on sliderPrev
+sliderPrev.addEventListener("click",sliderPrevFunction)
+
+//function when ypu click on sliderNext
+sliderNext.addEventListener("click",sliderNextFunction)
+
+
+//----------------all function bellow ---------------|
+
+//function at beginning
+function defaultFunction(){
+removeAddActiveList();
+removeAddActiveImg();
+ prevButton();
+ nextButton();
+ sliderNumber();
+}
+
+
+
+
+ //remove active class from all li and add it to select li 
+function removeAddActiveList(){
+sliderLi.forEach((list)=>{
+ list.classList.remove("active")
+})
+sliderLi[currentSlider].classList.add("active")
+
+}
+
+
+
+ //remove active class from all img and add it to select img 
+function removeAddActiveImg(){
+sliderImg.forEach((img)=>{
+  img.classList.remove("active")
+})
+sliderImg[currentSlider].classList.add("active")
+
+}
+
+
+
+
+//prev button 
+function prevButton(){
+if(currentSlider === 0){
+  sliderPrev.classList.add("disabled");
+}else{
+  sliderPrev.classList.remove("disabled");
+}
+}
+
+
+
+//next button 
+function nextButton(){
+if(currentSlider === sliderImg.length-1){
+  sliderNext.classList.add("disabled");
+}else{
+  sliderNext.classList.remove("disabled");
+}
+}
+
+
+
+
+// no of img we are 
+function sliderNumber(){
+sliderNo.innerHTML=`#slider ${currentSlider + 1} / ${sliderImg.length}`
+}
+
+
+//function when ypu click on sliderPrev
+function sliderPrevFunction(){
+    if( currentSlider === 0){
+      return;
+    }else
+    {
+currentSlider--;
+ removeAddActiveList();
+ removeAddActiveImg();
+prevButton();
+nextButton();
+sliderNumber();
+
+    }
+  }
+
+
+  //function when ypu click on sliderNext
+  function sliderNextFunction(){
+     if( currentSlider === sliderImg.length - 1){
+      return;
+    }
+    else{
+      currentSlider++;
+      removeAddActiveList();
+      removeAddActiveImg();
+     prevButton();
+     nextButton();
+     sliderNumber();
+        }
+  }
+
+
+
+
+```
