@@ -141,7 +141,6 @@ sliderIndicators.append(sliderUl);
 //call li and action click
 let sliderLi = document.querySelectorAll("#pagination-ul li");
 
-//function at beginning
 
 //get index from storage
 window.addEventListener("load",()=>{
@@ -151,6 +150,7 @@ window.addEventListener("load",()=>{
   }
   
   else{
+//function at beginning
     defaultFunction();
   }  
 })
