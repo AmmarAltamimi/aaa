@@ -161,7 +161,8 @@ const unique2 = arr2.filter((obj, index) => {
 //   { id: 2, name: 'Bob' }
 // ]
 ```
-
+-------------------------
+*->في array of array نفس اعلاه*
 
 
 
