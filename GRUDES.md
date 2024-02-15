@@ -355,12 +355,12 @@ submitInput.addEventListener("click",()=>{
     }
 
     //    make condition 
-    // if(titleInput.value !=""
-    //  &&priceInput.value
-    //  && taxesInput.value !="" 
-    //  && adsInput.value !=""
-    //  && categoryInput.value !=""
-    //  && countInput.value.length <= 100){
+    if(titleInput.value !=""
+     &&priceInput.value
+     && taxesInput.value !="" 
+     && adsInput.value !=""
+     && categoryInput.value !=""
+     && countInput.value.length <= 100){
 
         if(mood ==="create"){
         for(let i= 1 ; i<= +countInput.value ; i++){
@@ -375,7 +375,7 @@ submitInput.addEventListener("click",()=>{
        //clear inputs
         clearData();
 
-    // }
+    }
 
         //function add delete all element
         addDeleteAll();
@@ -587,7 +587,6 @@ function addToPage (dataArray){
 
 
 });
-
 
 
 }
