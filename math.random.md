@@ -93,7 +93,7 @@ function changeColor(){
 
 ```
 ------------------------------------------------------------------------------------------------
-**4) random element fron serial with array or string**
+**4) random element fron serial with array**
 ```javascript
 
 let arr = ["Ahmed", "Sayed", "Ali"];
