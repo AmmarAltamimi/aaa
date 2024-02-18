@@ -7,7 +7,48 @@ function rang(min,max){
 ```
 
 ------------------------------------------------------------------------------------------------
-**2) random color**
+**2) random color with out array**
+```html
+<div></div>
+<p></p>
+```
+
+```css
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+div,p{
+  width: 400px;
+  height: 400px;
+background-color: red;
+margin-right: 20px;
+}
+```
+
+```javascript
+let first = Math.round(Math.random() *360);
+let second = Math.round(Math.random() *100);
+let third = Math.round(Math.random() *100);
+
+document.body.style.backgroundColor=`hsl(${first},${second}%,${third}%)`
+
+document.querySelector("div").style.backgroundColor=`rgb(${third},${second},${first})`
+
+
+let hex = Math.random().toString(16);
+let color = hex.slice(2,8);
+
+document.querySelector("p").style.backgroundColor=`#${color}`
+
+```
+
+-------------------------------------------------------------------------------------------------
+**3) random color with array or string**
 ```javascript
 
 //------------------------------------------using array-----------------------------------------------//
@@ -52,7 +93,7 @@ function changeColor(){
 
 ```
 ------------------------------------------------------------------------------------------------
-**3) random element fron serial**
+**4) random element fron serial with array or string**
 ```javascript
 
 let arr = ["Ahmed", "Sayed", "Ali"];
@@ -60,7 +101,7 @@ let arr = ["Ahmed", "Sayed", "Ali"];
 console.log(arr[Math.trunc(Math.random() * arr.length)]);
 ```
 ------------------------------------------------------------------------------------------------
-**4) random password**
+**5) random password with array or string**
 ```javascript
 //note => تدخل طول كلمة السر + والاجابة بنعم او لا هل الحالة التي تريد ان تشملها كلمة السر مثال هل تريد فيها حروف كبيرة لانه بنعمل شرط فيما بعد انه اذا كانت الاجابة لا مابضيفه في المصفوفة او النص الذي اريد ان انشي به كلمة السر
 function generatePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols){ 
