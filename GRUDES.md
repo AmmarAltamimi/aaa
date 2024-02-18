@@ -1,5 +1,7 @@
 # نظام ال gruds
 
+**تم كتابة 2 قانكشن في الحل**
+
 ```html
 
 <html>
@@ -614,8 +616,54 @@ if(dataArray.length > 0){
 }
 
 
+```
+
+```javascript
+searchInput.addEventListener("input",()=>{
+    let newArray = [];
+    let value = searchInput.value.trim();
+    let tr = document.querySelectorAll("#demo tr");
+    if(value ==""){
+
+   addToPage(dataArray);
+
+    }
+        else{
+    if(searchType === searchTitle.getAttribute("id")){
+
+        dataArray.forEach((ele,index)=>{
+            if(ele.title.includes(value)){
+                tr[index].style.display="table-row";
+            }else{
+
+                tr[index].style.display="none";
+            }
+                
+            
+        })
+
+    }
+
+    else if(searchType === searchCategory.getAttribute("id")){
+
+        dataArray.forEach((ele,index)=>{
+            if(ele.category.includes(value)){
+                tr[index].style.display="table-row";
+
+            }else{
+                tr[index].style.display="none";
+
+            }
+                
+            
+        })
 
 
+    }
 
+}
+
+});
 
 ```
+ذذذذذ
