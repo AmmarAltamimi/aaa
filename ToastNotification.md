@@ -27,6 +27,8 @@
                 <span class="text text-2">Your changes has been saved</span>
             </div>
         </div>
+        <i class="fa-solid fa-xmark close"></i>
+
         <div class="progress"></div>
     </div>
 
@@ -110,6 +112,18 @@ body{
     color: #333;
 }
 
+.toast .close{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.toast .close:hover{
+    opacity: 1;
+}
 
 .toast .progress{
     position: absolute;
@@ -148,7 +162,7 @@ const button = document.querySelector("button"),
       closeIcon = document.querySelector(".close"),
       progress = document.querySelector(".progress");
       let width;
-    let a ;
+    let a
       button.addEventListener("click",()=>{
 
         toast.classList.add("active");
@@ -181,5 +195,15 @@ const button = document.querySelector("button"),
 
 
 
+
+      closeIcon.addEventListener(("click"),()=>{
+        toast.classList.remove("active");
+        progress.style.width=`0%`;
+        clearInterval(a);
+      })
+
+
+
+ 
  
 ```
