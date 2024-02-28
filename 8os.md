@@ -1,29 +1,39 @@
 ```java
 import java.util.*;
 
+
 class Test {
-    static int pageFaults(int pages[], int capacity) {
-        HashSet<Integer> s = new HashSet<>();
-        int page_faults = 0;
-
-        for (int i = 0; i < pages.length; i++) {
-            if (!s.contains(pages[i])) {
-                if (s.size() == capacity) {
-                    s.remove(pages[i - capacity]);
+    
+        static int pageFault (int[] pages , int capacity){
+            //1
+            HashSet <Integer> s = new  HashSet<>();
+            int page_fault = 0;
+            //2
+            for(int i =0 ; i < pages.length ; i++){
+                if(!s.contains(pages[i])){
+                    if(s.size() == capacity){
+                        s.remove(pages[i-capacity]);
+                    }
+                    s.add(pages[i]);
+                    page_fault++;
                 }
-                s.add(pages[i]);
-                page_faults++;
             }
+            //3
+            return page_fault;
+                
         }
-        return page_faults;
-    }
-
-    public static void main(String args[]) {
-        int pages[] = {7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2};
+    
+    public static void main(String args[]){
+        int[] pages ={7,0,1,2,0,3,0,4,2,3,0,3,2};
         int capacity = 4;
-        System.out.println(pageFaults(pages, capacity));
+        System.out.println(pageFault(pages,capacity));
     }
+    
 }
+
+// output
+// 9
+
 ```
 
 -----------------------------------------------------------------
