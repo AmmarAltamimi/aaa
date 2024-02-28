@@ -62,7 +62,7 @@ class Main {
 }
 
 
-output
+//output
 // Enter the memory size
 // 1000
 // Enter the page size
