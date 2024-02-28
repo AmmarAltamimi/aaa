@@ -109,4 +109,28 @@ class bankerAlgorthim {
     }
     
 }
+
+
+// output
+// Enter no of processes
+// 5
+// Enter no of resuorce
+// 3
+// Enter the availablitiy 
+// 4
+// 4
+// 4
+// Enter the max matrix 
+// 7 5 3
+// 3 2 2
+// 9 0 2
+// 2 2 3
+// 4 3 3
+// Enter the allocation matrix 
+// 0 1 0
+// 2 0 0
+// 3 0 2
+// 2 1 1
+// 0 0 2
+// the safeSeq is p1 p2 p3 p4 p0 
 ```
