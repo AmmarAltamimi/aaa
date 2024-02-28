@@ -58,10 +58,10 @@ class Test {
                     if(s.size() == capacity){
                         
                         //A
-                        for(int n : s )
-                            if(indexes.containsKey(n) && indexes.get(n) < lru ){
-                                lru = indexes.get(n);
-                                val = n;
+                        for(int abc : s )
+                            if(indexes.containsKey(abc) && indexes.get(abc) < lru ){
+                                lru = indexes.get(abc);
+                                val = abc;
                             }
                             
                         //B
