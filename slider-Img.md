@@ -277,65 +277,6 @@ function sliderPrevFunction(){
   }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// const members = [
-// 	{ id: 1, name: 'John' },
-// 	{ id: 2, name: 'Jane' },
-// 	{ id: 1, name: 'Johnny' },
-// 	{ id: 4, name: 'Alice' },
-//   ];
-
-//   let ammar = members.map((m) => [m.id, m]);
-//   console.log(ammar);
-
-//   const unique = [...new Map(ammar).values()];
-// console.log(unique)
-
-
-
-// const ammar = [];
-// const newone =[];
-
-// for(let i = 0 ;  i < members.length;i++){
-
-// 	if(!ammar.includes(members[i].id)){
-// 		ammar.push(members[i].id)
-// 		newone.push(members[i]);
-
-// 	}
-// }
-	
-// console.log(newone)
-
-
-
-
-
-// const members = [1,2,3,1,2];
-// const ammar = [];
-
-
-// for(let i = 0 ;  i < members.length;i++){
-
-// 	if(i ===members.findIndex(e=>(members[i]===e))){
-// 		ammar.push(members[i]);
-
-// 	}
-// }
-	
-// console.log(ammar)
-
 ```
 *بطريقة متغير والاتربيوت اي  غير طريقة Index السابقة  في جافا اسكربيت*
 ```javascript
