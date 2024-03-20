@@ -162,7 +162,28 @@ const password = generatePassword(passwordLength,
 console.log(`Generated password: ${password}`);
 
 ```
+------------------------------------------------------------------------------------------------
+**6)عرض جميع عناصر array بطريقة عشوائي وبدون تكرار اي عنصر**
 
 
 
+```javascript
+let randomIndexArray = [];
+    while(array.length > randomIndexArray.length) {
+        let randomIndex = Math.round(Math.random() * array.length);
+        if(!randomIndexArray.includes(randomIndex)){
+            randomIndexArray.push(randomIndex);
+        }
+    }
+
+```
+
+```javascript
+let randomIndexArray = [];
+    while(answers.length > 0){
+        let random = Math.floor(Math.random() * answers.length);
+        randomIndexArray.push(random);
+        answers.splice(random,1);
+   
+```
 
