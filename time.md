@@ -1,5 +1,5 @@
 # time and data
-**1) عمل عداد تناقص يعني countdown**
+**1) عمل عداد تناقص يعني countdown الحالة الاولى**
 
 ```html
 	<section class="one"></section>
@@ -19,7 +19,6 @@
 		<span class="seconds"></span>
 		</div>
 ```
-
 
 ```javascript
 setInterval(()=>{
@@ -45,7 +44,35 @@ spans.forEach((el,i)=>{
 ```
 -------------------------------------------------------------------------------------
 
-**2) عمل الوقت والتاريخ** : توجد طريقتين لعمل الوقت والتاريخ :
+**2)عمل عداد تناقص يعني countdown الحالة الثانية**
+```javascript
+function countDown(duration){
+
+
+    setIntervalTime = setInterval(()=>{
+        
+        let min = Math.floor(duration / (60));
+        let sec = Math.floor(duration % (60));
+        minSpan.innerHTML = min >= 10 ? min : `0${min}:` ;
+        secSpan.innerHTML = sec >= 10 ? sec : `0${sec}` ;
+
+        duration--;
+
+        if(duration < 0){
+            clearInterval(setIntervalTime);
+            submit.click();
+        }
+
+
+    },1000)
+
+
+
+}
+```
+-------------------------------------------------------------------------------------
+
+**3) عمل الوقت والتاريخ** : توجد طريقتين لعمل الوقت والتاريخ :
 
 *أ) عن طريق دوال جاهزة : في هذه الطريقة لايمكن التعديل على الشكل الذي يظهر فيه التاريخ والوقت كالتالي :*
 
