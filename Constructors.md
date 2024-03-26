@@ -45,7 +45,7 @@ Sure, here are examples for each built-in constructor in JavaScript:
    let obj2 = new Object();
    obj2.property = 'value';
    ```
-   **يمكن انشاء object عن طريق عمل constructor  بيدك اي لما نعمل object من class**
+   **يمكن ايضا انشاء object عن طريق عمل constructor  بيدك اي لما نعمل object من class**
 
 6. **Function:**
    ```javascript
